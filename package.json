@@ -8,7 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -19,8 +25,14 @@
     "@types/node": "18.8.4",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.25.0",
+    "commitizen": "^4.2.5",
+    "eslint": "^8.25.0",
     "eslint-config-next": "12.3.1",
+    "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
     "typescript": "4.8.4"
   }
 }

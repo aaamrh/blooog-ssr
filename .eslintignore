@@ -1,0 +1,16 @@
+node_modules
+lib
+dist
+public
+
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.css
+*.scss
+*.woff
+*.ttf
+*.eot
+*.md
+*.snap
