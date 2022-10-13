@@ -8,6 +8,7 @@
   "rules": {
     "react/jsx-uses-react": "off", // React 17 之后，jsx 的页面已经不再需要引入 React了
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+    "react/prop-types": [2, { "ignore": ["children"] }]
   }
 }
