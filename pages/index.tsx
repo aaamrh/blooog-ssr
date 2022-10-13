@@ -1,7 +1,10 @@
+import Articles from "@/components/Articles";
 import HomeLayout from "@/components/Layout/HomeLayout";
 import type { NextPage } from "next";
 import Head from "next/head";
 // import Image from "next/image";
+
+import { getArticles } from '../server'
 
 const Home: NextPage = () => {
   return (
@@ -12,15 +15,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Articles data={getArticles()} />
+      
     </HomeLayout>
 
-    // <div className={styles.container}>
-    //   <HomeLayout>
-    //     填写内容
-    //   </HomeLayout>
-
-    //   <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-    // </div>
+    // <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
   );
 };
 

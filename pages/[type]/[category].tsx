@@ -1,31 +1,54 @@
+import Articles from "@/components/Articles";
+import HomeLayout from "@/components/Layout/HomeLayout";
+import { getArticles } from "@/server";
 import type { NextPage } from "next";
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       {
-//         params: {
-//           type: "getStaticPaths",
-//           category: "-----------"
-//         },
-//       },
-//     ],
-//     fallback: false,
-//   };
-// }
 
-// export async function getStaticProps({ params }) {
-//   console.log("params", params);
-//   return {
-//     props: {
-//       type: "这是type",
-//     },
-//   };
-// }
-
-const Classify: NextPage = (props) => {
+const Classify: NextPage = (props: {type: string, list: any[]}) => {
   console.log("props", props);
-  return <>这是文章列表页</>;
+  return (
+    <>
+      {/* FIXME: 这里又引入了 HomeLayout, 并且页面逻辑和 index.tsx 中渲染数据的逻辑基本一致，是否冗余 */}
+      <HomeLayout>
+        { props.type }
+
+        <hr />
+        
+        <Articles data={props.list} />
+      </HomeLayout>
+    </>
+  )
 };
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          type: "front-end",
+          category: "react"
+        },
+      },
+      {
+        params: {
+          type: "back-end",
+          category: "koa"
+        },
+      },
+    ],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  console.log("params", params);
+  return {
+    props: {
+      type: `这是 ${ params.type } 下面的 ${ params.category } 文章列表 `,
+      list: getArticles(),
+    },
+  };
+}
+
 
 export default Classify;

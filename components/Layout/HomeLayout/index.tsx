@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from 'next/link'
 import styles from "./index.module.scss"
 
 // import { useState } from 'react';
@@ -26,9 +27,6 @@ function HomeLayout (props) :NextPage {
 
 		{/* 左侧自我介绍 */}
 		<div className={styles.profile}>
-			{/* <div className="avatar">
-				<img src="/avatar.png" alt='头像' />
-			</div> */}
 			<div className={styles.monster} title="CSS大眼仔">
 				<div className={styles.eye}></div>
 			</div>
@@ -42,14 +40,27 @@ function HomeLayout (props) :NextPage {
 				</code>
 			</div>
 		</div>
-		<div className={styles.main}>
-			{/* <header>
-				<RhNav className="nav" navlist={navs} pathname={pathname} />
-				<Link to='/e'>写文章</Link>
+
+		<div className={styles.content}>
+			<header>
+				{/* <RhNav className="nav" navlist={navs} pathname={pathname} />
+				<Link to='/e'>写文章</Link> */}
+				<div style={{ width: 300 }}>
+					<span>
+						<Link href="/front-end">前端</Link> {"  |  "}
+						<Link href="/front-end/react">React</Link>
+					</span>
+					{"  -----  "}
+					<span>
+						<Link href="/back-end">后端</Link> {"  |  "}
+						<Link href="/back-end/koa">Koa</Link>
+					</span>
+				</div>
 			</header>
-			<section className="body" onScroll={onScroll}> */}
+			{/* <section className="body" onScroll={onScroll}> */}
+			<section className={styles.body}>
 				{ props.children }
-			{/* </section> */}
+			</section>
 		</div>
 	</div>
 }
