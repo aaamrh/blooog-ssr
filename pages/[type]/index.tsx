@@ -1,23 +1,28 @@
 import Articles from "@/components/Articles";
 import HomeLayout from "@/components/Layout/HomeLayout";
 import { getArticles } from "@/server";
-import type { NextPage } from "next";
+import type { NextPageWithLayout } from "@/pages/_app";
 
-const Classify: NextPage = (props: {type: string, list: any[]}) => {
+const AritcleType: NextPageWithLayout<{type: string, list: any[]}> = (props: {type: string, list: any[]}) => {
   console.log('props', props)
   return (
     <>
       {/* FIXME: 这里又引入了 HomeLayout, 并且页面逻辑和 index.tsx 中渲染数据的逻辑基本一致，是否冗余 */}
-      <HomeLayout>
-        { props.type }
+      { props.type }
 
-        <hr />
-        
-        <Articles data={props.list} />
-      </HomeLayout>
+      <hr />
+
+      <Articles data={props.list} />
     </>
   )
 }
+
+AritcleType.getLayout = function getLayout(page){
+  return (<HomeLayout>
+    {page}
+  </HomeLayout>)
+}
+
 
 export async function getStaticPaths() {
   return {
@@ -29,7 +34,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }:any) {
   console.log('params', params)
   return {
     props: {
@@ -40,4 +45,4 @@ export async function getStaticProps({ params }) {
 }
 
 
-export default Classify;
+export default AritcleType;

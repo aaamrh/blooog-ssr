@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
 import Link from 'next/link'
+import { ReactElement } from "react";
 import styles from "./index.module.scss"
 
 // import { useState } from 'react';
@@ -9,8 +9,7 @@ import styles from "./index.module.scss"
 // import RhProgress from '../../components/RhProgress';
 // import { getNav } from '../../utils/getNav';
 
-function HomeLayout (props) :NextPage {
-	console.log(props)
+function HomeLayout (props: any) :ReactElement {
 	// const {pathname} = useLocation();
 	// const [progressWidth, setProgressWidth] = useState(0);
 	// const { data: classify } = useSelector(state => state.classify)

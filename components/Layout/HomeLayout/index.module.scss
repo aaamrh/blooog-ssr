@@ -173,14 +173,14 @@
 					}
 				}
 			}
-			@include phone{
-				height: 50px;
-				.nav{
-					&+a{
-						line-height: 50px;
-					}
-				}
-			}
+			// @include phone{
+			// 	height: 50px;
+			// 	.nav{
+			// 		&+a{
+			// 			line-height: 50px;
+			// 		}
+			// 	}
+			// }
 		}
 		
 		.body{
@@ -192,15 +192,15 @@
 		}
 	}
 
-	@include phone {
-		.profile{
-			display: none;
-		}
-		.main{
-			width: 100%;
-			font-size: 12px;
-		}
-	}
+	// @include phone {
+	// 	.profile{
+	// 		display: none;
+	// 	}
+	// 	.main{
+	// 		width: 100%;
+	// 		font-size: 12px;
+	// 	}
+	// }
 }
 
 .rh-btn{
