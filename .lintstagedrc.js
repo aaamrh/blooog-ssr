@@ -6,6 +6,7 @@ module.exports = {
   // '*.{scss,less,styl,html}': ['stylelint --fix', 'prettier --write'],
   // '*.md': ['prettier --write'],
   "*.{js,jsx,ts,tsx,vue}": [
-    "eslint --fix"
+    "eslint --fix",
+    "git add ."
   ]
 }

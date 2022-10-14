@@ -1,17 +1,38 @@
 {
   "extends": [
-    "next/core-web-vitals",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "next/core-web-vitals"
   ],
   "rules": {
-    "react/jsx-uses-react": "off", // React 17 之后，jsx 的页面已经不再需要引入 React了
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-unused-vars": [2],
-    "@typescript-eslint/ban-types": "off",
-    "react/prop-types": [0, { "ignore": ["children"] }]
-  }
+
+    "no-var": "error",
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1, "maxBOF": 0}],
+    "no-trailing-spaces": "error",
+    "no-whitespace-before-property": "error",
+
+    "array-bracket-spacing": ["error", "never", { "objectsInArrays": false }],
+    "block-spacing": "error",
+    "func-call-spacing": ["error", "never"],
+    "indent": ["error", "tab"],
+    "key-spacing": ["error", { "beforeColon": false }],
+    "keyword-spacing": ["error", { "before": true }],
+    "lines-around-comment": ["error", { "beforeBlockComment": true }],
+    "max-len": ["error", {
+      "code": 120,
+      "tabWidth": 2,
+      "ignoreComments": true,
+      "ignoreTrailingComments": true
+    }],
+    "object-curly-spacing": ["error", "always"],
+    "space-before-function-paren": "error",
+    "space-in-parens": ["error", "never"],
+    "space-infix-ops": "error",
+    "space-unary-ops": "error",
+    "template-curly-spacing": ["error", "always"]
+  },
+  "plugins": ["@typescript-eslint"]
 }
