@@ -84,19 +84,64 @@
   --h6-font-size:                var($font-size-base) ;
 
   // 链接
-  $link-color:                              $primary ;
-  $link-decoration:                         none ;
-  $link-hover-color:                        darken($link-color, 15%) ;
-  $link-hover-decoration:                   underline ;
+  $link-color:                   $primary ;
+  $link-decoration:              none ;
+  $link-hover-color:             darken($link-color, 15%) ;
+  $link-hover-decoration:        underline ;
 
   // body
   $body-bg:                   $white ;
   $body-color:                $gray-900 ;
   $body-text-align:           null ;
 
+  --col-num: 24;
   --gap-mn: 3px;
   --gap-sm: 6px;
   --gap-base: 1rem;
   --gap-lg: 1.5rem;
   --gap-huge: 2rem;
+
+  // 4 16 24 40 64 104 168 272 440 720 1152 1920
+  // 8 12 20 32 48 80  128 208 336 552 896  1440
 }
+
+// .ma-row{
+//   display: flex;
+//   margin-left: -8px;
+//   margin-right: -8px;
+// }
+// .ma-col{
+//   background: yellowgreen;
+//   position: relative;
+//   padding: 0 12px;
+//   width: 100%;
+// }
+
+// .ma-col-1{
+//   flex: 0 0 4.1666667%;
+//   max-width: 4.1666667%;
+// }
+// .ma-col-2{
+//   flex: 0 0 8.3333334%;
+//   max-width: 8.3333334%;
+// }
+// .ma-col-3{
+//   flex: 0 0 12.5%;
+//   max-width: 12.5%;
+// }
+// .ma-col-4{
+//   flex: 0 0 16.666668%;
+//   max-width: 16.666668%;
+// }
+// .ma-col-5{
+//   flex: 0 0 20.833336%;
+//   max-width: 20.833336%;
+// }
+// .ma-col-6{
+//   flex: 0 0 25%;
+//   max-width: 25%;
+// }
+// .ant-col-7 {
+//   flex: 0 0 29.16666667%;
+//   max-width: 29.16666667%;
+// }

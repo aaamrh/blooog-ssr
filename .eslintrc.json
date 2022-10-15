@@ -17,21 +17,16 @@
     "array-bracket-spacing": ["error", "never", { "objectsInArrays": false }],
     "block-spacing": "error",
     "func-call-spacing": ["error", "never"],
-    "indent": ["error", "tab"],
+    "indent": ["error", 2],
     "key-spacing": ["error", { "beforeColon": false }],
     "keyword-spacing": ["error", { "before": true }],
     "lines-around-comment": ["error", { "beforeBlockComment": true }],
-    "max-len": ["error", {
-      "code": 120,
-      "tabWidth": 2,
-      "ignoreComments": true,
-      "ignoreTrailingComments": true
-    }],
     "object-curly-spacing": ["error", "always"],
     "space-before-function-paren": "error",
     "space-in-parens": ["error", "never"],
     "space-infix-ops": "error",
     "space-unary-ops": "error",
+    "semi": ["error", "always"],
     "template-curly-spacing": ["error", "always"]
   },
   "plugins": ["@typescript-eslint"]

@@ -6,18 +6,18 @@ import { getArticles } from "@/server";
 import Articles from "@/components/Articles";
 
 const ArticleCategory: NextPageWithLayout<{type: string, list: any[]}> = (props) => {
-	console.log("props", props);
+  console.log("props", props);
 
-	return (
-		<>
-			{/* FIXME: 这里又引入了 HomeLayout, 并且页面逻辑和 index.tsx 中渲染数据的逻辑基本一致，是否冗余 */}
-			{ props.type }
+  return (
+    <>
+      {/* FIXME: 这里又引入了 HomeLayout, 并且页面逻辑和 index.tsx 中渲染数据的逻辑基本一致，是否冗余 */}
+      { props.type }
 
-			<hr />
+      <hr />
 
-			<Articles data={props.list} />
-		</>
-	)
+      <Articles data={props.list} />
+    </>
+  );
 };
 
 // ArticleCategory.propTypes = {
@@ -26,39 +26,39 @@ const ArticleCategory: NextPageWithLayout<{type: string, list: any[]}> = (props)
 // }
 
 ArticleCategory.getLayout = (page: ReactElement) => {
-	return (<HomeLayout>
-		{page}
-	</HomeLayout>)
-}
+  return (<HomeLayout>
+    {page}
+  </HomeLayout>);
+};
 
 export async function getStaticPaths () {
-	return {
-		paths: [
-			{
-				params: {
-					type: "front-end",
-					category: "react"
-				},
-			},
-			{
-				params: {
-					type: "back-end",
-					category: "koa"
-				},
-			},
-		],
-		fallback: false,
-	};
+  return {
+    paths: [
+      {
+        params: {
+          type: "front-end",
+          category: "react"
+        },
+      },
+      {
+        params: {
+          type: "back-end",
+          category: "koa"
+        },
+      },
+    ],
+    fallback: false,
+  };
 }
 
 export async function getStaticProps ({ params }: any) {
-	console.log("params", params);
-	return {
-		props: {
-			type: `这是 ${ params.type } 下面的 ${ params.category } 文章列表 `,
-			list: getArticles(),
-		},
-	};
+  // console.log("params", params);
+  return {
+    props: {
+      type: `这是 ${ params.type } 下面的 ${ params.category } 文章列表 `,
+      list: getArticles(),
+    },
+  };
 }
 
 

@@ -1,4 +1,3 @@
-
 function getArticles () {
   return [
     {
@@ -13,7 +12,7 @@ function getArticles () {
     },
     {
       id: 3,
-      title: "文章标题3", 
+      title: "文章标题3",
       content: "content3"
     },
     {
@@ -21,7 +20,7 @@ function getArticles () {
       title: "文章标题4",
       content: "content4"
     },
-  ]
+  ];
 }
 
 export {
