@@ -3,6 +3,18 @@
 const path = require("path");
 
 const nextConfig = {
+  async rewrites () {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://127.0.0.1:3010/api/:path*',
+      },
+      {
+        source: '/aaa',
+        destination: '/admin',
+      }
+    ];
+  },
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config) => {
@@ -18,11 +30,26 @@ const nextConfig = {
       @import "@/styles/_animation.scss";
       @import "@/styles/_mixin.scss";
     `,
-  },
+  }
 };
 
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV !== 'production') {
+  // Object.assign(nextConfig, { async rewrites () {
+  //   return [
+  //     {
+  //       source: '/api',
+  //       destination: 'http://127.0.0.1:3010/',
+  //     },
+  //   ];
+  // } });
+}
+
+console.log(nextConfig);
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer(nextConfig);
+withBundleAnalyzer({});
+
+module.exports = nextConfig;

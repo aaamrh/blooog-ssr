@@ -19,7 +19,7 @@ export default function MyApp ({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(<Component {...pageProps} />);
 }
 
-// FIXME: 是否可通过 webpack 插入到 HTML 中
+// FIXME: 是否可通过 webpack 插入到 HTML 中? :试试自定义Document
 function genGridClass () :void {
   console.log('生成 grid class');
   const styleId = 'grid-class';
