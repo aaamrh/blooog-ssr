@@ -26,9 +26,9 @@ const nextConfig = {
   },
   sassOptions: {
     additionalData: `
-      @import "@/styles/_variables.scss";
-      @import "@/styles/_animation.scss";
-      @import "@/styles/_mixin.scss";
+      @import "@/src/styles/_variables.scss";
+      @import "@/src/styles/_animation.scss";
+      @import "@/src/styles/_mixin.scss";
     `,
   }
 };

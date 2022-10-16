@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { AxiosRequestConfig } from 'axios';
-import type { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
+import type { AxiosInstance, AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 
 interface ResponseData{
   code: number,

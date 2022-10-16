@@ -1,6 +1,6 @@
-import Articles from "@/components/Articles";
-import HomeLayout from "@/components/Layout/HomeLayout";
-import { getArticles } from "@/server";
+import Articles from "@/src/components/Articles";
+import HomeLayout from "@/src/components/Layout/HomeLayout";
+// import { getArticles } from "@/server";
 import type { NextPageWithLayout } from "@/pages/_app";
 
 const AritcleType: NextPageWithLayout<{type: string, list: any[]}> = (props: {type: string, list: any[]}) => {
@@ -41,7 +41,8 @@ export async function getStaticProps ({ params }:any) {
   return {
     props: {
       type: `这是 ${ params.type } 文章列表 `,
-      list: getArticles()
+      list: []
+      // list: getArticles()
     },
   };
 }

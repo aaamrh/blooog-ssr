@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react';
 // import PropTypes from 'prop-types';
 import type { NextPageWithLayout } from "@pages/_app";
-import HomeLayout from "@/components/Layout/HomeLayout";
-import { getArticles } from "@/server";
-import Articles from "@/components/Articles";
+import HomeLayout from "@/src/components/Layout/HomeLayout";
+// import { getArticles } from "@/server";
+import Articles from "@/src/components/Articles";
 
 const ArticleCategory: NextPageWithLayout<{type: string, list: any[]}> = (props) => {
   console.log("props", props);
@@ -56,7 +56,8 @@ export async function getStaticProps ({ params }: any) {
   return {
     props: {
       type: `这是 ${ params.type } 下面的 ${ params.category } 文章列表 `,
-      list: getArticles(),
+      list: [],
+      // list: getArticles(),
     },
   };
 }

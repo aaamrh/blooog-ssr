@@ -1,8 +1,8 @@
 import { ReactElement, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import HomeLayout from "@/components/Layout/HomeLayout";
-import articleModel from "@/model/ArticleModel";
+import HomeLayout from "@components/Layout/HomeLayout";
+import articleModel from "@model/ArticleModel";
 import { NextPageWithLayout } from "./_app";
 // import Articles from "@/components/Articles";
 // import Image from "next/image";
